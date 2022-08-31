@@ -20,13 +20,22 @@ function Section2({ fullName }) {
         <h1 className="section-2__title">Task 2 React Static and Events</h1>
         <div className="section-2__task">
           <div className="section-2__task__name">
-            <p>Hi! My name is {name}</p>
-            <button onClick={onClickHandler}>Change Name</button>
+            <p>
+              Hi! My name is <b>{name}</b>
+            </p>
+            <button className="btn btn-red" onClick={onClickHandler}>
+              Change Name
+            </button>
           </div>
+          <hr />
           <div className="section-2__task__count">
-            <p>Jumlah counter saat ini: {count}</p>
-            <button onClick={onReduceHandler}>- Kurang</button>
-            <button onClick={onAddHandler}>+ Tambah</button>
+            <p>Current number of counters: {count}</p>
+            <button className="btn btn-secondary" onClick={onReduceHandler}>
+              Decrement
+            </button>
+            <button className="btn btn-primary" onClick={onAddHandler}>
+              Increment
+            </button>
           </div>
         </div>
       </div>
