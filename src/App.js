@@ -1,8 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import { Expenses, ExpenseForm } from "./components";
 
 function App() {
-  const expenses = [
+  const dummyExpenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -24,14 +25,15 @@ function App() {
     },
   ];
 
+  const [expenses, setExpenses] = useState(dummyExpenses);
+
   const saveExpenseDataHandler = (expenseData) => {
     const newExpenseData = {
       ...expenseData,
       id: Math.random().toString(),
     };
     console.log("In App.js");
-    expenses.push(newExpenseData);
-    console.log(expenses);
+    setExpenses((prevState) => [newExpenseData, ...prevState]);
   };
 
   return (

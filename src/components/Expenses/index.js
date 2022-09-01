@@ -1,13 +1,25 @@
-import React from "react";
-import { ExpenseItem } from "../";
+import React, { useState } from "react";
+import { ExpenseItem, ExpenseFilter, ExpensesList } from "../";
 import "./Expenses.css";
 const Expenses = ({ expenses }) => {
+  const [filteredYear, setFilteredYear] = useState("0");
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
+  const filteredExpenses =
+    filteredYear === "0"
+      ? [...expenses]
+      : expenses.filter((expense) => {
+          return expense.date.getFullYear().toString() === filteredYear;
+        });
+
   return (
     <>
       <div className="expenses">
-        {expenses.map((item) => {
-          return <ExpenseItem expenseTitle={item.title} expenseAmount={item.amount} expenseDate={item.date} key={item.id} />;
-        })}
+        <ExpenseFilter onChangeFilter={filterChangeHandler} />
+        <ExpensesList filteredExpenses={filteredExpenses} />
       </div>
     </>
   );

@@ -4,11 +4,6 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = ({ expenseDate, expenseTitle, expenseAmount }) => {
   const [title, setTitle] = useState(expenseTitle);
-
-  const clickHandler = () => {
-    setTitle("Ganti Judul");
-  };
-
   return (
     <div className="expense-item">
       <ExpenseDate expenseDate={expenseDate} />
@@ -16,7 +11,6 @@ const ExpenseItem = ({ expenseDate, expenseTitle, expenseAmount }) => {
         <h2>{title}</h2>
         <div className="expense-item__price">${expenseAmount}</div>
       </div>
-      <button onClick={clickHandler}>Change Title</button>
     </div>
   );
 };
