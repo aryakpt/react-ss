@@ -11,7 +11,7 @@ const ExpensesList = ({ filteredExpenses }) => {
       {filteredExpenses.map((item) => {
         return (
           <li key={item.id}>
-            <ExpenseItem expenseTitle={item.title} expenseAmount={item.amount} expenseDate={item.date} />;
+            <ExpenseItem expenseTitle={item.title} expenseAmount={item.amount} expenseDate={item.date} />
           </li>
         );
       })}

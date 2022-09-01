@@ -3,6 +3,7 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = ({ onSaveExpenseData }) => {
   const [userInput, setUserInput] = useState({ title: "", amount: "", date: "" });
+  const [isShow, setIsShow] = useState(false);
 
   const inputChangeHandler = (e) => {
     setUserInput((prevState) => {
@@ -18,11 +19,23 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
     };
     onSaveExpenseData(expenseData);
     setUserInput({ title: "", amount: "", date: "" });
+    setIsShow(false);
+  };
+
+  const onShowHandler = () => {
+    setIsShow(true);
+  };
+
+  const onHideHandler = () => {
+    setIsShow(false);
   };
 
   return (
     <div className="new-expense">
-      <form onSubmit={submitHandler}>
+      <div className={isShow ? "hidden" : ""}>
+        <button onClick={onShowHandler}>Add New Expense</button>
+      </div>
+      <form className={isShow ? "" : "hidden"} onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label>Title</label>
@@ -38,6 +51,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
           </div>
         </div>
         <div className="new-expense__actions">
+          <button onClick={onHideHandler}>Cancel</button>
           <button type="submit">Add Expense</button>
         </div>
       </form>

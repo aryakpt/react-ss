@@ -4,4 +4,7 @@ import Expenses from "./Expenses";
 import ExpenseForm from "./ExpenseForm";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpensesList from "./ExpensesList";
-export { ExpensesList, ExpenseFilter, Expenses, ExpenseItem, ExpenseDate, ExpenseForm };
+import Chart from "./Chart";
+import ChartBar from "./ChartBar";
+import ExpensesChart from "./ExpensesChart";
+export { ExpensesChart, Chart, ChartBar, ExpensesList, ExpenseFilter, Expenses, ExpenseItem, ExpenseDate, ExpenseForm };
