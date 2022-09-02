@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Section2.css";
+
 function Section2({ fullName }) {
   const [name, setName] = useState(fullName);
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `${count} ${name}`;
+  }, [name, count]);
 
   const onClickHandler = () => {
     setName("New Name");
