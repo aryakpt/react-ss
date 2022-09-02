@@ -7,8 +7,8 @@ function App() {
   return (
     <main>
       <h1>Hello my name is {name}</h1>
-      <Section2 fullName={"Arya Krisna Putra"} />
-      <Footer />
+      <Section2 fullName={name} />
+      <Footer name={name} />
     </main>
   );
 }
