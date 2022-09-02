@@ -3,7 +3,7 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = ({ onSaveExpenseData }) => {
   const [userInput, setUserInput] = useState({ title: "", amount: "", date: "" });
-  const [isShow, setIsShow] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const inputChangeHandler = (e) => {
     setUserInput((prevState) => {
@@ -19,23 +19,23 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
     };
     onSaveExpenseData(expenseData);
     setUserInput({ title: "", amount: "", date: "" });
-    setIsShow(false);
+    setIsEditing(false);
   };
 
-  const onShowHandler = () => {
-    setIsShow(true);
+  const startEditingHandler = () => {
+    setIsEditing(true);
   };
 
-  const onHideHandler = () => {
-    setIsShow(false);
+  const stopEditingHandler = () => {
+    setIsEditing(false);
   };
 
   return (
     <div className="new-expense">
-      <div className={isShow ? "hidden" : ""}>
-        <button onClick={onShowHandler}>Add New Expense</button>
+      <div className={isEditing ? "hidden" : ""}>
+        <button onClick={startEditingHandler}>Add New Expense</button>
       </div>
-      <form className={isShow ? "" : "hidden"} onSubmit={submitHandler}>
+      <form className={isEditing ? "" : "hidden"} onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label>Title</label>
@@ -51,7 +51,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
           </div>
         </div>
         <div className="new-expense__actions">
-          <button onClick={onHideHandler}>Cancel</button>
+          <button onClick={stopEditingHandler}>Cancel</button>
           <button type="submit">Add Expense</button>
         </div>
       </form>
