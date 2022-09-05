@@ -1,20 +1,22 @@
 import React from "react";
 import styles from "./UserList.module.css";
-
+import { Card } from "../../";
 const UserList = ({ users }) => {
   return (
-    <div className={`${styles.user - list}`}>
-      <ul>
-        {users.map((user, i) => {
-          return (
-            <li key={i}>
-              <p>{user.name}</p>
+    <ul className={`${styles["user-list"]}`}>
+      {users.map((user, i) => {
+        return (
+          <li key={i}>
+            <Card>
+              <p>
+                <b>{user.name}</b>
+              </p>
               <p>{user.age}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+            </Card>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

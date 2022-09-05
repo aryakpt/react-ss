@@ -1,3 +1,4 @@
 import { UserForm, UserList } from "./User";
-import { Button, Card } from "./UI";
-export { UserForm, UserList, Button, Card };
+import { Button, Card, Modal } from "./UI";
+
+export { UserForm, UserList, Button, Card, Modal };
