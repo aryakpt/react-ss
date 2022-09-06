@@ -1,3 +1,5 @@
-import Section2 from "./Section2";
+import Section2 from "./Section2/Section2";
 import { Footer, Navbar } from "./Layouts";
-export { Footer, Navbar, Section2 };
+import { UserList } from "./User";
+
+export { UserList, Footer, Navbar, Section2 };
