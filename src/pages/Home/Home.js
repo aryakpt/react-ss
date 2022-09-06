@@ -10,6 +10,7 @@ const Home = () => {
     fetchUsers();
   }, []);
 
+  // console.log(users);
   const fetchUsers = async function () {
     fetch("https://gorest.co.in/public/v2/users")
       .then((res) => {
