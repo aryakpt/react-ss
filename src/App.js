@@ -1,15 +1,23 @@
 import React from "react";
 import "./App.css";
-import { Section2, Footer } from "./components";
+import { Footer, Navbar } from "./components";
+import { ThemeProvider } from "./contexts";
+import { Home } from "./pages";
 
 function App() {
   const name = "Arya Krisna Putra";
   return (
-    <main>
-      <h1>Hello my name is {name}</h1>
-      <Section2 fullName={name} />
-      <Footer name={name} />
-    </main>
+    <ThemeProvider>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Home />
+      </main>
+      <footer>
+        <Footer name={name} />
+      </footer>
+    </ThemeProvider>
   );
 }
 
