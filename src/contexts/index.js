@@ -1,3 +1,3 @@
 import { ThemeContext, ThemeProvider } from "./ThemeContext/ThemeContext";
 
-export { ThemeProvider };
+export { ThemeProvider, ThemeContext };
