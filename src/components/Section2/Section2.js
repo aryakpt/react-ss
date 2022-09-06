@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Section2.css";
+import { Button } from "../UI";
 
 function Section2({ fullName }) {
   const [name, setName] = useState(fullName);
@@ -28,19 +29,19 @@ function Section2({ fullName }) {
             <p>
               Hi! My name is <b>{name}</b>
             </p>
-            <button className="btn btn-red" onClick={onClickHandler}>
+            <Button className="btn-red" onClick={onClickHandler}>
               Change Name
-            </button>
+            </Button>
           </div>
           <hr />
           <div className="section-2__task__count">
             <p>Current number of counters: {count}</p>
-            <button className="btn btn-secondary" onClick={onReduceHandler}>
+            <Button className="btn-secondary" onClick={onReduceHandler}>
               Decrement
-            </button>
-            <button className="btn btn-primary" onClick={onAddHandler}>
+            </Button>
+            <Button className="btn-primary" onClick={onAddHandler}>
               Increment
-            </button>
+            </Button>
           </div>
         </div>
       </div>
