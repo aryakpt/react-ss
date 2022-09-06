@@ -20,9 +20,9 @@ function Section2({ fullName }) {
   };
 
   return (
-    <section className="section-2">
+    <div className="section-2">
       <div className="container">
-        <h1 className="section-2__title">Task 2 React Static and Events</h1>
+        <h2 className="section-2__title">React Static and Events</h2>
         <div className="section-2__task">
           <div className="section-2__task__name">
             <p>
@@ -44,7 +44,7 @@ function Section2({ fullName }) {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
