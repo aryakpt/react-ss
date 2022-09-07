@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Section2, UserList } from "../../components";
+import { Section2, UserList, UserForm, UserManualList } from "../../components";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -24,6 +24,12 @@ const Home = () => {
       });
   };
 
+  const [manualUsers, setManualUsers] = useState([]);
+
+  const onSaveManualUsersHandler = (user) => {
+    setManualUsers((prevState) => [user, ...prevState]);
+  };
+
   return (
     <React.Fragment>
       <div className={styles.home}>
@@ -36,6 +42,11 @@ const Home = () => {
         <section className={`${styles["home-api-task"]}`}>
           <h2 className={`${styles["home-api-task__title"]}`}>API Request in React</h2>
           <UserList users={users} />
+        </section>
+        <section className={`${styles["home-form-task"]}`}>
+          <h2 className={`${styles["home-form-task__title"]}`}>React Form</h2>
+          <UserForm onSave={onSaveManualUsersHandler} />
+          <UserManualList users={manualUsers} />
         </section>
       </div>
     </React.Fragment>

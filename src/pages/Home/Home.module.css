@@ -7,7 +7,7 @@
 .home-api-task {
   background-color: white;
   max-width: 1440px;
-  margin: 2rem auto 5rem;
+  margin: 2rem auto;
   padding: 2rem 4rem;
   border: solid black 3px;
   border-radius: 1rem;
@@ -15,6 +15,21 @@
 }
 
 .home-api-task__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-form-task {
+  background-color: white;
+  max-width: 1440px;
+  margin: 2rem auto;
+  padding: 2rem 4rem;
+  border: solid black 3px;
+  border-radius: 1rem;
+  box-shadow: 16px 16px 0px rgba(0, 0, 0);
+}
+
+.home-form-task__title {
   text-align: center;
   margin-bottom: 2rem;
 }
