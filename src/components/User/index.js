@@ -1,3 +1,4 @@
 import UserList from "./UserList/UserList";
-
-export { UserList };
+import UserForm from "./UserForm/UserForm";
+import UserManualList from "./UserManualList/UserManualList";
+export { UserManualList, UserList, UserForm };
